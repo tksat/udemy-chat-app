@@ -42,8 +42,6 @@ export default function SignIn({setName}) {
   const [string, setString] = useState('')
   const [isComposed, setIsComposed] = useState(false)
 
-  console.log(isComposed)
-
   useEffect(e =>{
     setDisabled( string === '' )
   }, [string])
