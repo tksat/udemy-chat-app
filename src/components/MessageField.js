@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { TextField } from '@material-ui/core';
+import { pushMessage } from "../firebase"
 
 const MessageField = ({setText, text, name}) => {
   const [isComposed, setIsComposed] = useState(false)
@@ -14,7 +15,7 @@ const MessageField = ({setText, text, name}) => {
       if(text === '') return
 
       if(e.key === 'Enter'){
-        console.log("ファイヤーベースにアップする")
+        pushMessage({name: "いのうえ", text})
         setText('')
         e.preventDefault()
       }
